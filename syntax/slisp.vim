@@ -5,7 +5,7 @@
 syn clear
 syn case ignore
 
-syn keyword slispConditional == != > < >= <= && || string= list? 
+syn keyword slispConditional == != > < >= <= string= list? 
         \ symbol? string? number? float? integer? function? nil?
         \ keyword?
 
