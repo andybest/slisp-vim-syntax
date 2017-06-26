@@ -5,6 +5,9 @@
 syn clear
 syn case ignore
 
+" Highlight unmatched parens
+syn match slispError ,[]})],
+
 syn keyword slispConditional ==
 syn keyword slispConditional !=
 syn keyword slispConditional >
@@ -56,10 +59,11 @@ syntax match slispComment ";.*"
 
 if !exists("did_slisp_syntax_inits")
   let did_slisp_syntax_inits = 1
-  hi link slispConditional Conditional
-  hi link slispComment Comment
-  hi link slispKeyword Keyword
-  hi link slispOperator Operator
+  hi def link slispError Error
+  hi def link slispConditional Conditional
+  hi def link slispComment Comment
+  hi def link slispKeyword Keyword
+  hi def link slispOperator Operator
 endif
 
 let b:current_syntax = "slisp"
