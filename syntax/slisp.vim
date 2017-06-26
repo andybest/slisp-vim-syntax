@@ -24,6 +24,8 @@ syn keyword slispConditional function?
 syn keyword slispConditional nil?
 syn keyword slispConditional keyword?
 
+syn keyword slispKeyword do
+
 syn keyword slispKeyword count
 syn keyword slispKeyword random
 syn keyword slispKeyword cons
@@ -52,9 +54,12 @@ syn keyword slispOperator mod
 
 syntax match slispComment ";.*"
 
-highlight default link slispConditional Conditional
-highlight default link slispComment Comment
-highlight default link slispKeyword Keyword
-highlight default link slispOperator Operator
+if !exists("did_slisp_syntax_inits")
+  let did_slisp_syntax_inits = 1
+  hi link slispConditional Conditional
+  hi link slispComment Comment
+  hi link slispKeyword Keyword
+  hi link slispOperator Operator
+endif
 
 let b:current_syntax = "slisp"
