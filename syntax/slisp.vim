@@ -50,7 +50,7 @@ syn keyword slispOperator *
 syn keyword slispOperator /
 syn keyword slispOperator mod
 
-syntax match slispComment "\v.*$"
+syntax match slispComment ";.*"
 
 highlight default link slispConditional Conditional
 highlight default link slispComment Comment
